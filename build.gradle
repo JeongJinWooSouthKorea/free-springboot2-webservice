@@ -1,0 +1,32 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.7.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group 'org.jojoldu.book'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //gradle이 버전업 되면서 compile 명령어가 사라지고 implementation으로 대체됨
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    //testCompile이 버전업 되면서 testCompile 명령어가 사라지고 testImplementation으로 대체됨
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+}
