@@ -26,7 +26,14 @@ repositories {
 
 dependencies {
     //gradle이 버전업 되면서 compile 명령어가 사라지고 implementation으로 대체됨
-    implementation('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    //implementation('org.springframework.boot:spring-boot-starter-web')
     //testCompile이 버전업 되면서 testCompile 명령어가 사라지고 testImplementation으로 대체됨
-    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    //testImplementation('org.springframework.boot:spring-boot-starter-test')
+    /*
+    //JUnit4추가
+    testImplementation("org.junit.vintage:junit-vintage-engine"){
+        exclude group: "org.hamcrest", module: "hamcrest-core"
+    }*/
 }
